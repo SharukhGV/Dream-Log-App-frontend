@@ -25,3 +25,21 @@
     text-align: center;
   
   }
+
+
+.no-bullets {
+  list-style-type: none;
+  background-color: green;
+  padding: 20px;
+}
+.links{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.links:hover{
+  background-color: rgba(7, 245, 165, 0.202);
+  border-radius:  10%;
+  padding:10px;
+  }

@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import DreamDetails from "./DreamDetails";
+import Dream from "./Dream";
 
 function Dreams(){
    
       const [dreams, setdreams] = useState([]);
       const API = process.env.REACT_APP_API_URL;
-    //   let accumulatorArray = useMemo(() => [], []);
     
       useEffect(() => {
         axios
@@ -14,27 +13,25 @@ function Dreams(){
           .then((response) => setdreams(response.data))
           .catch((e) => console.error("catch", e));
       }, [API]);
-    
+    console.log(dreams)
       return (
-        <section>
-    
-            
-    
-          <table id="dreams">
-            <tbody>
+        <table>
+    <tr>
+    <th>Dream Number</th>
+    <th>Dream Name</th>
+    <th>Topic</th>
+  </tr>
               {dreams.map((individualdreams, index) => {
 
                 return (
-                  <DreamDetails
-                    individualdreams={individualdreams} index={index}
+                  
+                  <Dream
+                    key={individualdreams.id} individualdreamID={individualdreams.id} date={individualdreams.date} name={individualdreams.name} isGoodQ={individualdreams.good_dream} description={individualdreams.dream_description} topic={individualdreams.topic} night={individualdreams.night} index={index}
                   />
                 );
               })}
-            </tbody>
-          </table>
-         {/* {dreams.reduce((accumulator,currentValue) =>  accumulator = Number(accumulator) + Number(currentValue.amount) , 0 )
-    } */}
-        </section>
+         
+        </table>
       );
     }
     
