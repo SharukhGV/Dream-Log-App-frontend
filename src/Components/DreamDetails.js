@@ -9,6 +9,7 @@ function DreamDetails({individualdreams,index}){
   const API = process.env.REACT_APP_API_URL;
   const [dream, setdream] = useState([]);
   const navigate = useNavigate();
+  const [thecolor, setthecolor] = useState("black");
 
   // useEffect(() => {}, []);
   // const API = process.env.REACT_APP_API_URL;
@@ -42,10 +43,29 @@ function DreamDetails({individualdreams,index}){
     deleteDream();
   };
 
+
+// let thecolordeterminate = "black"
+// if(dream.good_dream === "good")
+
+  const textcoloring= {
+    color: thecolor
+}
+
+useEffect(()=>{
+  if(dream.good_dream === "good"){
+  setthecolor("green")}
+  if(dream.good_dream === "bad"){
+    setthecolor("orange")}
+    if(dream.good_dream === "neutral"){
+      setthecolor("black")}
+
+},[dream.good_dream])
+
+
   return (
     
-    <article key={dream.id}>
-      <fieldset>
+    <article className="cardContact" key={dream.id}>
+      <fieldset style={textcoloring}>
         <legend> dream #{index}</legend>
         <h3>
           <strong>Name:</strong> {dream.name}

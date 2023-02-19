@@ -15,7 +15,7 @@ function Dreams(){
       }, [API]);
     console.log(dreams)
       return (
-        <table>
+        <table className="thedreamtable">
           <thead>
     <tr>
     <th>Dream Number</th>
