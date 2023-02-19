@@ -16,11 +16,12 @@ function Dreams(){
     console.log(dreams)
       return (
         <table>
+          <thead>
     <tr>
     <th>Dream Number</th>
     <th>Dream Name</th>
     <th>Topic</th>
-  </tr>
+  </tr></thead>
               {dreams.map((individualdreams, index) => {
 
                 return (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import moment from "moment";
 
 function DreamDetails({individualdreams,index}){
   const {id} = useParams();
@@ -50,10 +51,10 @@ function DreamDetails({individualdreams,index}){
           <strong>Name:</strong> {dream.name}
         </h3>
         <h3>
-          <strong>Date:</strong> {dream.date}
+          <strong>Date:</strong> {moment(dream.date).format('YYYY-MM-DD')}
         </h3>
         <h3>
-          <strong>Was your Dream Good?:</strong> {dream.good_dream ? <div>true</div> : <div>false</div>}
+          <strong>Was your Dream Good?:</strong> {dream.good_dream}
         </h3>
         <h3>
           <strong>Dream Description:</strong> {dream.dream_description}

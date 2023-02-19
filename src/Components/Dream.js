@@ -22,12 +22,13 @@ function Dream({ individualdreamID, isGoodQ, name, date, description, topic, nig
 //   }, [API,individualdreamID]);
   return (
 <>
-    
+<tbody>
     <tr>
         <td>DREAM# {index+=1}</td>
     <td><Link to={`/dreams/${individualdreamID}`}>{name}</Link></td>
     <td>{topic}</td>
     </tr>
+    </tbody>
 {/* <button onClick={setShow(!show)}>Show Deam Details</button>
 
 {show ? <DreamDetails /> : null} */}

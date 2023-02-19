@@ -7,6 +7,7 @@ import Index from "./Pages/Index";
 import NewForm from "./Pages/NewForm";
 import Show from "./Pages/Show";
 import "./App.css";
+import About from "./Components/About";
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
         <Route path="/dreams/:id" element={<Show />} />
         <Route path="/dreams/:id/edit" element={<Edit />} />
         <Route path="/dreams/new" element={<NewForm />} />
+        <Route path="/about" element={<About />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

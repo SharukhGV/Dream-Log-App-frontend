@@ -1,6 +1,8 @@
 
 function Home(){
 
+
+
     const pixstyle= {
         fontSize:"12px"
     }

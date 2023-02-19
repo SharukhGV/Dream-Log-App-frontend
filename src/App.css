@@ -26,10 +26,12 @@
   
   }
 
+  li {display: inline-block;}
+
 
 .no-bullets {
   list-style-type: none;
-  background-color: green;
+  background-color: rgb(124, 0, 112);
   padding: 20px;
 }
 .links{
