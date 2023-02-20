@@ -66,25 +66,40 @@ useEffect(()=>{
     
     <article className="cardContact" key={dream.id}>
       <fieldset style={textcoloring}>
-        <legend> dream #{index}</legend>
-        <h3>
-          <strong>Name:</strong> {dream.name}
-        </h3>
-        <h3>
-          <strong>Date:</strong> {moment(dream.date).format('YYYY-MM-DD')}
-        </h3>
-        <h3>
-          <strong>Was your Dream Good?:</strong> {dream.good_dream}
-        </h3>
-        <h3>
-          <strong>Dream Description:</strong> {dream.dream_description}
-        </h3>
-        <h3>
-          <strong>Topic of Dream:</strong> {dream.topic}
-        </h3>
-        <h3>
-          <strong>Occured at Night?:</strong> {dream.night ? <div>true</div> : <div>false</div>}
-        </h3>
+        <legend><strong>Everyone has Dreams...</strong></legend>
+
+        <table className="thedreamtableSHOW">
+  <tr>
+    <th>Category</th>
+    <th>Information</th>
+  </tr>
+  <tr>
+    <td>Name: </td>
+    <td>{dream.name}</td>
+  </tr>
+  <tr>
+    <td>Date: </td>
+    <td>{moment(dream.date).format('YYYY-MM-DD')}</td>
+  </tr>
+  <tr>
+    <td>Emotions after Waking up: </td>
+    <td>{dream.good_dream}</td>
+  </tr>
+  <tr>
+    <td>Description of Dream</td>
+    <td>{dream.dream_description}</td>
+  </tr>
+  <tr>
+    <td>General Topic</td>
+    <td>{dream.topic}</td>
+  </tr>
+  <tr>
+    <td>Night-Time Dream: </td>
+    <td>{dream.night ? <div>🌙 Yes, Night Time</div> : <div>No, Day Time ☀️</div>}</td>
+  </tr>
+  
+</table>
+       
       </fieldset>
 
       <div className="showNavigation">
@@ -95,13 +110,19 @@ useEffect(()=>{
         </span>
         <span>
           <Link to={`/dreams/${dream.id}/edit`}>
-            <button>Edit</button>
+            <button className="editbutton">Edit</button>
           </Link>
         </span>
         <span>
-          <button onClick={handleDelete}>Delete</button>
+          <button className="delete" onClick={handleDelete}>Delete</button>
         </span>
       </div>
+
+      {/* <p>THE THREE TYPES OF ISLAMIC DREAMS
+Dreams are broken into three parts according to the Sunnah:
+Ru'yaa - good visions (dreams)
+Hulum - bad dreams
+Dreams from one's self</p> */}
     </article>
   );
 }

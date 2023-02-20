@@ -117,6 +117,85 @@ div {
 
 
 
+.thedreamtableSHOW {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.thedreamtableSHOW  td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.thedreamtableSHOW  tr:nth-child(even){background-color: #f2f2f2}
+.thedreamtableSHOW  tr th {text-align: center;}
+
+.thedreamtableSHOW tr:hover {background-color: #ddd;}
+
+.thedreamtableSHOW  th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #895bcf;
+  color: white;
+}
+
+.thedreamtable  th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #895bcf;
+  color: white;
+}
+
+
+button {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.editbutton {
+  width: 30%;
+  background-color: #da5b16;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.delete {
+  width: 30%;
+  background-color: #af4c4c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+legend {
+  color:#8104aa;
+}
+
+
 @media (min-width: 300px) and (max-width: 768px) {
 
 
@@ -144,5 +223,41 @@ div {
   .links{
     font-size: small;
   }
+
+
+  button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .editbutton {
+    width: 100%;
+    background-color: #da5b16;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete {
+    width: 100%;
+    background-color: #af4c4c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
 }
 
