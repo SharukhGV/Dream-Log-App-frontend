@@ -27,7 +27,7 @@ function Home(){
           </p><p>
             <strong>Email:</strong>
             <a href="mailto:sharukhvelupillai@pursuit.org">
-              sharukh.g.velupillai@gmail.com
+            sharukhvelupillai@pursuit.org
             </a>
           </p>
     </div>
