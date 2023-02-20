@@ -24,11 +24,6 @@ function Home(){
             <strong>GitHub:</strong>
             <a href="https://github.com/SharukhGV">
     Sharukh's GitHub Portfolio        </a>
-          </p><p>
-            <strong>Email:</strong>
-            <a href="mailto:sharukhvelupillai@pursuit.org">
-            sharukhvelupillai@pursuit.org
-            </a>
           </p>
     </div>
     

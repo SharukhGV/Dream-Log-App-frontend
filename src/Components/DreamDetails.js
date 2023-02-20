@@ -61,7 +61,6 @@ useEffect(()=>{
 
 },[dream.good_dream])
 
-
   return (
     
     <article className="cardContact" key={dream.id}>
