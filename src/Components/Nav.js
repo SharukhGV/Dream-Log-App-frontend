@@ -53,7 +53,7 @@ function Nav() {
               style={({ isActive }) =>
               isActive ? activeStyle : nonactiveStyle}
             >
-              About APP
+              About
             </NavLink></li>
   
           </ul>
