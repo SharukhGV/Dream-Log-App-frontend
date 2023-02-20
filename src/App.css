@@ -114,3 +114,32 @@ div {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+
+
+  .homePAge{
+  
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  
+  .cardContact{
+    text-align: center;
+    font-size: small;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+}
+
