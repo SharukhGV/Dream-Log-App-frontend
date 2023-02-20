@@ -149,6 +149,10 @@ div {
   color: white;
 }
 
+.thedreamtable  tr {
+  text-align: center;
+}
+
 
 button {
   width: 30%;
