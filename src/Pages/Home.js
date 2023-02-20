@@ -26,7 +26,7 @@ function Home(){
     Sharukh's GitHub Portfolio        </a>
           </p><p>
             <strong>Email:</strong>
-            <a href="mailto:sharukh.g.velupillai@gmail.com">
+            <a href="mailto:sharukhvelupillai@pursuit.org">
               sharukh.g.velupillai@gmail.com
             </a>
           </p>
