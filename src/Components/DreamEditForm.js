@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 
+// Axios automatically transforms the data returned from the server, but with fetch() you have to call the response.json method to parse the data to a JavaScript object.
+
+
 const API = process.env.REACT_APP_API_URL;
 
 function DreamEditForm() {
