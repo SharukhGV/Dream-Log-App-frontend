@@ -10,8 +10,8 @@ import Show from "./Pages/Show";
 import "./App.css";
 import About from "./Components/About";
 import SignIn from "./Components/auth/SignIn";
+import SignUP from "./Components/auth/SignUp";
 import PrivateRoute from './Components/auth/PrivateRoute';
-import SignUp from "./Components/auth/SignUp";
 ;
 
 function App() {
@@ -19,26 +19,42 @@ function App() {
 
   return (
     <Router>
-  <Nav />
-  <Routes>
-    <Route path="/" element={<PrivateRoute />}>
-      <Route index element={<Home />} />
-    </Route>
+      <Nav/>
+      <Routes>
 
-    <Route path="/dreams" element={<PrivateRoute />}>
-      <Route index element={<Index />} />
-      <Route path=":id" element={<Show />} />
-      <Route path=":id/edit" element={<Edit />} />
-      <Route path="new" element={<NewForm />} />
-    </Route>
+      <Route exact path='/' element={<Home/>}/>
+      <Route exact path='/' element={<PrivateRoute/>}>
 
-    <Route path="/about" element={<About />} />
-    <Route path="/login" element={<SignIn />} />
-    <Route path="/signup" element={<SignUp />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
-</Router>
+</Route>
+     
 
+<Route exact path='/dreams' element={<Index/>}>
+      <Route exact path='/dreams' element={<PrivateRoute/>}/>
+</Route>
+           
+
+<Route exact path='/dreams:id' element={<Show/>}>
+      <Route exact path='/dreams:id' element={<PrivateRoute/>}/>
+</Route>
+       
+
+<Route exact path='/dreams/:id/edit' element={<Edit/>}>
+      <Route exact path='/dreams/:id/edit' element={<PrivateRoute/>}/>
+</Route>
+
+       
+<Route exact path='/dreams/new' element={<NewForm/>}>
+      <Route exact path='/dreams/new' element={<PrivateRoute/>}/>
+</Route>
+        {/* <Route path="/dreams/new" element={<NewForm />} />
+        <Route path="/dreams/new" element={<PrivateRoute />} /> */}
+
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<SignUP />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 

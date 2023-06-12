@@ -83,7 +83,7 @@ const [userShowNAME, setUserShowNAME]=useState('')
     {userShow ? <p>{userShowNAME}</p> : <p>{userShowNAME}</p>}
     </div>
     <div className="footer">
-    <a href = "https://veluplay.com/">VeluPLAY</a>
+    <a href = "https://veluplay.com/">SharukhGV</a>
    copyright &#169 2022
   </div>
   </div>
