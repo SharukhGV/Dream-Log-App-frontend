@@ -4,7 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase';
 import {  signOut } from "firebase/auth";
 // import { Navigate } from 'react-router-dom';
-
+import DreamSound from "../Components/DreamSound"
  
 const Home = () => {
     const navigate = useNavigate();
@@ -82,6 +82,9 @@ const [userShowNAME, setUserShowNAME]=useState('')
 
     {userShow ? <p>{userShowNAME}</p> : <p>{userShowNAME}</p>}
     </div>
+   
+< DreamSound />
+
 
   </div>
     
