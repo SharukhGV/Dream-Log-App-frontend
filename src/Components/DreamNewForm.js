@@ -2,10 +2,12 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import moment from "moment";
+// import { auth } from '../firebase';
 
 const API = process.env.REACT_APP_API_URL;
 
 function DreamNewForm() {
+
 //   let { id } = useParams();
   // console.log(dream)
   //dreams is the previous data populated into the form
@@ -23,10 +25,11 @@ function DreamNewForm() {
 };
 
   const [dream, setdream] = useState({
+    user_id:"",
     name: "",
     good_dream: "",
     dream_description: "",
-    date: "1995-01-12",
+    date: "2000-01-01",
     topic:"",
     night: true,
   });
