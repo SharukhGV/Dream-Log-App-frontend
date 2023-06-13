@@ -37,7 +37,7 @@ function About() {
     }, [])
 
 function navigateNewForm(){
-  navigate('/new')
+  navigate('/dreams/new')
 
 }
 
