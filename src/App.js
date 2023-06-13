@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Edit from "./Pages/Edit";
@@ -8,48 +7,28 @@ import Index from "./Pages/Index";
 import NewForm from "./Pages/NewForm";
 import Show from "./Pages/Show";
 import "./App.css";
-import About from "./Components/About";
+import Journal from "./Components/Journal";
 import SignIn from "./Components/auth/SignIn";
 import SignUP from "./Components/auth/SignUp";
-import PrivateRoute from './Components/auth/PrivateRoute';
-;
-
+import PrivateRoute from "./Components/auth/PrivateRoute";
 function App() {
-
-
   return (
     <Router>
-      <Nav/>
+      <Nav />
       <Routes>
+        <Route exact path="/" element={<Home />} />
 
-      <Route exact path='/' element={<Home/>}/>
-      <Route exact path='/' element={<PrivateRoute/>}>
+        <Route exact path="/dreams" element={<PrivateRoute><Index/></PrivateRoute>}></Route>
 
-</Route>
-     
+        <Route exact path="/dreams:id" element={<PrivateRoute><Show/></PrivateRoute>}></Route>
 
-<Route exact path='/dreams' element={<Index/>}>
-      <Route exact path='/dreams' element={<PrivateRoute/>}/>
-</Route>
-           
+        <Route exact path="/dreams/:id/edit" element={<PrivateRoute><Edit/></PrivateRoute>}></Route>
 
-<Route exact path='/dreams:id' element={<Show/>}>
-      <Route exact path='/dreams:id' element={<PrivateRoute/>}/>
-</Route>
-       
-
-<Route exact path='/dreams/:id/edit' element={<Edit/>}>
-      <Route exact path='/dreams/:id/edit' element={<PrivateRoute/>}/>
-</Route>
-
-       
-<Route exact path='/dreams/new' element={<NewForm/>}>
-      <Route exact path='/dreams/new' element={<PrivateRoute/>}/>
-</Route>
+        <Route exact path="/dreams/new" element={<PrivateRoute><NewForm/></PrivateRoute>}></Route>
         {/* <Route path="/dreams/new" element={<NewForm />} />
         <Route path="/dreams/new" element={<PrivateRoute />} /> */}
 
-        <Route path="/about" element={<About />} />
+        <Route path="/journal" element={<Journal />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUP />} />
         <Route path="*" element={<NotFound />} />

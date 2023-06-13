@@ -55,7 +55,9 @@ function Nav() {
             >
               Home
             </NavLink></li>
-            <li><NavLink
+
+            
+            {/* <li><NavLink
               className="links"
               to="/dreams"
               exact="true"
@@ -63,8 +65,11 @@ function Nav() {
               isActive ? activeStyle : nonactiveStyle}
             >
               All Dreams
-            </NavLink></li>
-           <li> <NavLink
+            </NavLink></li> */}
+
+
+            
+           {/* <li> <NavLink
               className="links"
               to="/dreams/new"
               exact="true"
@@ -72,17 +77,17 @@ function Nav() {
               isActive ? activeStyle : nonactiveStyle}
             >
               New Form
-            </NavLink></li>
+            </NavLink></li> */}
 
 
             <li> <NavLink
               className="links"
-              to="/about"
+              to="/journal"
               exact="true"
               style={({ isActive }) =>
               isActive ? activeStyle : nonactiveStyle}
             >
-              About
+              Journal
             </NavLink></li>
 
             {/* <li> <NavLink
