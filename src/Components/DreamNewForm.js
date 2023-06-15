@@ -18,7 +18,9 @@ function DreamNewForm() {
   axios
     .post(`${API}/dreams`, newDream)
     .then((response) => {
-      // setdream(response.data); // set the entire `dream` object
+      console.log(response.data)
+
+      setdream(response.data); // set the entire `dream` object
       navigate(`/dreams`);
     })
     .catch((e) => console.error("catch", e));
