@@ -19,11 +19,11 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
-  authDomain: "dream-journal-777.firebaseapp.com",
-  projectId: "dream-journal-777",
-  storageBucket: "dream-journal-777.appspot.com",
-  messagingSenderId: "555557571687",
-  appId: "1:555557571687:web:4e906ba8013ea9bb6918c2"
+  authDomain: "dream-log-application.firebaseapp.com",
+  projectId: "dream-log-application",
+  storageBucket: "dream-log-application.appspot.com",
+  messagingSenderId: "934924712713",
+  appId: "1:934924712713:web:ad37e2d5acb64c713ab1d8"
 };
 
 // Initialize Firebase
