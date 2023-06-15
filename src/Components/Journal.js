@@ -36,12 +36,14 @@ function About() {
          
     }, [])
 
-function navigateNewForm(){
+function navigateNewForm(e){
+  e.preventDefault()
   navigate('/dreams/new')
 
 }
 
-function navigateJournal(){
+function navigateJournal(e){
+  e.preventDefault()
   navigate('/dreams')
 
 }

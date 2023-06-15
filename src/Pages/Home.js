@@ -37,11 +37,14 @@ const [userShowNAME, setUserShowNAME]=useState('')
          
     }, [])
 
-    function navigateLoginMENU() {
+    function navigateLoginMENU(e) {
+        e.preventDefault()
         navigate('/login')
       }
 
-      function navigateSignUpMENU() {
+      function navigateSignUpMENU(e) {
+        e.preventDefault()
+
         navigate('/signup')
       }
  

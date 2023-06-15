@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { NavLink, useNavigate } from 'react-router-dom'
+// import { UserAuth } from './AuthContext';
  
 const SignIn = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
        
+    
     const onLogin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
@@ -15,6 +17,7 @@ const SignIn = () => {
             // Signed in
             const user = userCredential.user;
             navigate("/home")
+
             console.log(user);
         })
         .catch((error) => {
