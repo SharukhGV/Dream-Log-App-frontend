@@ -48,7 +48,7 @@ function DreamNewForm() {
       console.log(response.data)
 
       setdream(response.data); // set the entire `dream` object
-      navigate(`/dreams`);
+      navigate('/dreams');
     })
     .catch((e) => console.error("catch", e));
 };
