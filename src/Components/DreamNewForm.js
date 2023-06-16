@@ -1,8 +1,8 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-// import { auth } from '../firebase';
+import { auth } from '../firebase';
 import { onAuthStateChanged } from "firebase/auth";
 
 const API = process.env.REACT_APP_API_URL;
