@@ -14,7 +14,7 @@ function DreamEditForm() {
   //dreams is the previous data populated into the form
 
   const [dream, setdream] = useState({
-    // user_id:"",
+    user_id:"",
     name: "",
     good_dream: "",
     dream_description: "",
