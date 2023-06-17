@@ -10,6 +10,8 @@ const API = process.env.REACT_APP_API_URL;
 
 function DreamEditForm() {
   let { id } = useParams();
+  // let { uid } = useParams();
+
   // console.log(dream)
   //dreams is the previous data populated into the form
 
@@ -18,8 +20,8 @@ function DreamEditForm() {
     name: "",
     good_dream: "",
     dream_description: "",
-    date: "2023-01-06T05:00:00.000Z",
     topic:"",
+    date: "2023-01-06T05:00:00.000Z",
     night: false,
   });
   

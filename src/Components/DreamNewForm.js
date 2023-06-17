@@ -58,8 +58,8 @@ function DreamNewForm() {
     name: "",
     good_dream: "",
     dream_description: "",
-    date: "2000-01-01",
     topic:"",
+    date: "2000-01-01",
     night: true,
   });
   
