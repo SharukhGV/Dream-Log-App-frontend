@@ -39,7 +39,7 @@ function App() {
         </Route>
 
         <Route exact path="/journal" element={<Journal />}>
-          <Route path="/journal" component={<PrivateRoute />} />
+          <Route path="/journal" element={<PrivateRoute />} />
         </Route>
 
         <Route path="/login" element={<SignIn />} />

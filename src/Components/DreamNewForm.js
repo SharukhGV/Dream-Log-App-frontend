@@ -18,6 +18,7 @@ function DreamNewForm() {
           // https://firebase.google.com/docs/reference/js/firebase.User
           const uid = user.uid;
           setUserShow(uid);
+          console.log(uid)
           // setUserShowNAME(`Welcome Back ${user.email}`);
           // ...
           // console.log("uid", uid)
@@ -34,7 +35,7 @@ function DreamNewForm() {
      
 }, [])
 
-
+let userShow2 = userShow
 //   let { id } = useParams();
   // console.log(dream)
   //dreams is the previous data populated into the form
@@ -93,7 +94,7 @@ function DreamNewForm() {
     <div className="edit">
       <form onSubmit={handleSubmit}>
 
-      <input type="hidden" id="user_id" name="user_id" value={userShow}></input>
+      <input type="hidden" id="user_id" name="user_id" value={userShow2}></input>
       
         <label htmlFor="name">Name:</label>
         <input
