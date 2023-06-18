@@ -1,38 +1,38 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-// import { auth } from '../firebase';
-// import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase';
+import { onAuthStateChanged } from "firebase/auth";
 
 const API = process.env.REACT_APP_API_URL;
 
 function DreamNewForm() {
-//   const [userShow, setUserShow]=useState("")
+  const [userShow, setUserShow]=useState("")
 
 
-//   useEffect(()=>{
-//     onAuthStateChanged(auth, (user) => {
-//         if (user) {
-//           // User is signed in, see docs for a list of available properties
-//           // https://firebase.google.com/docs/reference/js/firebase.User
-//           const uid = user.uid;
-//           setUserShow(uid);
-//           // setUserShowNAME(`Welcome Back ${user.email}`);
-//           // ...
-//           // console.log("uid", uid)
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          setUserShow(uid);
+          // setUserShowNAME(`Welcome Back ${user.email}`);
+          // ...
+          // console.log("uid", uid)
 
-//         } else {
-//           // User is signed out
-//           // ...
-//           console.log("user is logged out");
-//           setUserShow("");
-//           // setUserShowNAME(`Sweet Dreams! See You Soon!`);
+        } else {
+          // User is signed out
+          // ...
+          console.log("user is logged out");
+          setUserShow("");
+          // setUserShowNAME(`Sweet Dreams! See You Soon!`);
 
-//         }
-//       });
+        }
+      });
      
-// }, [])
+}, [])
 
 
 //   let { id } = useParams();
@@ -47,16 +47,17 @@ function DreamNewForm() {
     .then((response) => {
       console.log(response.data)
 
-      setdream(response.data); // set the entire `dream` object
+      // setdream(response.data); // set the entire `dream` object
       navigate('/dreams');
     })
     .catch((e) => console.error("catch", e));
 };
 
   const [dream, setdream] = useState({
+    user_id: userShow,
     name: "",
     good_dream: "",
-    dream_description: "",
+    dream_description: "",    
     topic:"",
     date: "2000-01-01",
     night: true,
