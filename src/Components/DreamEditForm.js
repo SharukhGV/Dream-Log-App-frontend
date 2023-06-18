@@ -22,7 +22,7 @@ function DreamEditForm() {
     dream_description: "",
     topic:"",    
     date: "2023-01-06T05:00:00.000Z",
-    night: false,
+    night: false
   });
   
   console.log(dream)
@@ -76,6 +76,9 @@ function DreamEditForm() {
   return (
     <div className="edit">
       <form onSubmit={handleSubmit}>
+
+      <input type="hidden" id="user_id" name="user_id" value={dream.user_id}></input>
+
         <label htmlFor="name">Name:</label>
         <input
           id="name"

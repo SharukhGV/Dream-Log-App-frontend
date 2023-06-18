@@ -60,7 +60,7 @@ function DreamNewForm() {
     dream_description: "",    
     topic:"",
     date: "2000-01-01",
-    night: true,
+    night: true
   });
   
   console.log(dream)
@@ -92,6 +92,9 @@ function DreamNewForm() {
   return (
     <div className="edit">
       <form onSubmit={handleSubmit}>
+
+      <input type="hidden" id="user_id" name="user_id" value={userShow}></input>
+      
         <label htmlFor="name">Name:</label>
         <input
           id="name"
