@@ -2,7 +2,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-// import { auth } from '../firebase';
+import { auth } from '../firebase';
+import { onAuthStateChanged } from "firebase/auth";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -11,10 +12,25 @@ function DreamNewForm() {
 
 
   useEffect(()=>{
-   const uid = request.auth.uid;
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          setUserShow(uid);
+          // setUserShowNAME(`Welcome Back ${user.email}`);
+          // ...
+          // console.log("uid", uid)
 
-          setUserShow(uid)
-    console.log(uid)
+        } else {
+          // User is signed out
+          // ...
+          console.log("user is logged out");
+          setUserShow("");
+          // setUserShowNAME(`Sweet Dreams! See You Soon!`);
+
+        }
+      });
      
 }, [])
 
@@ -78,7 +94,7 @@ function DreamNewForm() {
       <form onSubmit={handleSubmit}>
 
       <input type="hidden" id="user_id" name="user_id" value={userShow}></input>
-
+      
         <label htmlFor="name">Name:</label>
         <input
           id="name"
