@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import { auth } from '../firebase';
-import { onAuthStateChanged } from "firebase/auth";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -12,25 +11,9 @@ function DreamNewForm() {
 
 
   useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          const uid = user.uid;
-          setUserShow(uid);
-          // setUserShowNAME(`Welcome Back ${user.email}`);
-          // ...
-          // console.log("uid", uid)
-
-        } else {
-          // User is signed out
-          // ...
-          console.log("user is logged out");
-          setUserShow("");
-          // setUserShowNAME(`Sweet Dreams! See You Soon!`);
-
-        }
-      });
+ 
+          setUserShow(auth.user.uid);
+    console.log(auth.user.uid)
      
 }, [])
 
@@ -94,7 +77,7 @@ function DreamNewForm() {
       <form onSubmit={handleSubmit}>
 
       <input type="hidden" id="user_id" name="user_id" value={userShow}></input>
-      
+
         <label htmlFor="name">Name:</label>
         <input
           id="name"
