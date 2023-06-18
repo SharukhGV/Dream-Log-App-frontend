@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-import { auth } from '../firebase';
+// import { auth } from '../firebase';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -11,9 +11,10 @@ function DreamNewForm() {
 
 
   useEffect(()=>{
- 
-          setUserShow(auth.user.uid);
-    console.log(auth.user.uid)
+   const uid = request.auth.uid;
+
+          setUserShow(uid)
+    console.log(uid)
      
 }, [])
 
