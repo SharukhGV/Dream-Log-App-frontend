@@ -16,7 +16,7 @@ function DreamEditForm() {
   //dreams is the previous data populated into the form
 
   const [dream, setdream] = useState({
-    user_id:"",
+    // user_id:"",
     name: "",
     good_dream: "",
     dream_description: "",
@@ -77,7 +77,7 @@ function DreamEditForm() {
     <div className="edit">
       <form onSubmit={handleSubmit}>
 
-      <input type="hidden" id="user_id" name="user_id" value={dream.user_id}></input>
+      {/* <input type="hidden" id="user_id" name="user_id" value={dream.user_id}></input> */}
 
         <label htmlFor="name">Name:</label>
         <input
