@@ -1,64 +1,80 @@
-import React, {  useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from '../firebase';
-import {  signOut } from "firebase/auth";
+
 // import { Navigate } from 'react-router-dom';
-import DreamSound from "../Components/DreamSound"
- 
+// import DreamSound from "../Components/DreamSound"
+// import { useEffect, useState } from "react";
+import LoginButton from "../Components/LoginButton"
+// import LogoutButton from "../Components/LogoutButton"
+// import { useAuth0 } from "@auth0/auth0-react";
+// import LogoutButton from "../Components/LogoutButton";
+
+//  import { Auth0Provider } from "@auth0/auth0-react"
 const Home = () => {
-    const navigate = useNavigate();
-const [userShow, setUserShow]=useState(false)
-const [userShowNAME, setUserShowNAME]=useState('')
+// const [loginTRUE, setLogInTrue] = useState(false)
+
+  // useEffect(()=>{
+
+
+  //   if(!!isAuthenticated){
+  //   setLogInTrue(true)
+  //   }
+
+
+  // },[isAuthenticated])
+//     const navigate = useNavigate();
+// const [userShow, setUserShow]=useState(false)
+// const [userShowNAME, setUserShowNAME]=useState('')
 
     const pixstyle= {
         fontSize:"12px"
     }
-    useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              // User is signed in, see docs for a list of available properties
-              // https://firebase.google.com/docs/reference/js/firebase.User
-              const uid = user.uid;
-              setUserShow(true);
-              setUserShowNAME(`Welcome Back ${user.email}`);
-              // ...
-              console.log("uid", uid)
+    // useEffect(()=>{
+    //     onAuthStateChanged(auth, (user) => {
+    //         if (user) {
+    //           // User is signed in, see docs for a list of available properties
+    //           // https://firebase.google.com/docs/reference/js/firebase.User
+    //           const uid = user.uid;
+    //           setUserShow(true);
+    //           setUserShowNAME(`Welcome Back ${user.email}`);
+    //           // ...
+    //           console.log("uid", uid)
 
-            } else {
-              // User is signed out
-              // ...
-              console.log("user is logged out");
-              setUserShow(false);
-              setUserShowNAME(`Sweet Dreams! See You Soon!`);
+    //         } else {
+    //           // User is signed out
+    //           // ...
+    //           console.log("user is logged out");
+    //           setUserShow(false);
+    //           setUserShowNAME(`Sweet Dreams! See You Soon!`);
 
-            }
-          });
+    //         }
+    //       });
          
-    }, [])
+    // }, [])
 
-    function navigateLoginMENU(e) {
-        e.preventDefault()
-        navigate('/login')
-      }
+    // function navigateLoginMENU(e) {
+    //     e.preventDefault()
+    //     navigate('/login')
+    //   }
 
-      function navigateSignUpMENU(e) {
-        e.preventDefault()
+    //   function navigateSignUpMENU(e) {
+    //     e.preventDefault()
 
-        navigate('/signup')
-      }
+    //     navigate('/signup')
+    //   }
  
  
 
-    const handleLogout = () => {               
-        signOut(auth).then(() => {
-        // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-        // An error happened.
-        });
-    }
+    // const handleLogout = () => {               
+    //     signOut(auth).then(() => {
+    //     // Sign-out successful.
+    //         navigate("/");
+    //         console.log("Signed out successfully")
+    //     }).catch((error) => {
+    //     // An error happened.
+    //     });
+    // }
+
+// console.log(isAuthenticated)
+
     return(
     <div className="homePAge">
     <h1>Welcome to Dream Journal!</h1>
@@ -78,16 +94,9 @@ const [userShowNAME, setUserShowNAME]=useState('')
     Sharukh's GitHub Portfolio        </a>
           </p>
 
-
-    {userShow ? <p><button onClick={handleLogout}>Logout</button></p> : <p> <button onClick={navigateLoginMENU}>Login</button><button onClick={navigateSignUpMENU}>Sign Up</button>
-</p>}
-
-    {userShow ? <p>{userShowNAME}</p> : <p>{userShowNAME}</p>}
     </div>
    
-< DreamSound />
-
-
+<LoginButton/> 
   </div>
     
     

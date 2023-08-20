@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 // import { onAuthStateChanged } from "firebase/auth";
 // import { auth } from '../firebase';
 
-function Nav() {
+function NavAuth() {
 
   // const [userShow, setUserShow]=useState(false)
 // const [userShowNAME, setUserShowNAME]=useState('')
@@ -57,7 +57,7 @@ function Nav() {
             </NavLink></li>
 
             
-            {/* <li><NavLink
+            <li><NavLink
               className="links"
               to="/dreams"
               exact="true"
@@ -65,11 +65,11 @@ function Nav() {
               isActive ? activeStyle : nonactiveStyle}
             >
               All Dreams
-            </NavLink></li> */}
+            </NavLink></li>
 
 
             
-           {/* <li> <NavLink
+           <li> <NavLink
               className="links"
               to="/dreams/new"
               exact="true"
@@ -77,18 +77,18 @@ function Nav() {
               isActive ? activeStyle : nonactiveStyle}
             >
               New Form
-            </NavLink></li> */}
+            </NavLink></li>
 
 
-            {/* <li> <NavLink
+            <li> <NavLink
               className="links"
-              to="/journal"
+              to="/profile"
               exact="true"
               style={({ isActive }) =>
               isActive ? activeStyle : nonactiveStyle}
             >
-              Journal
-            </NavLink></li> */}
+              Profile
+            </NavLink></li>
 
             {/* <li> <NavLink
               className="links"
@@ -118,4 +118,4 @@ function Nav() {
 
 
 
-export default Nav;
+export default NavAuth;

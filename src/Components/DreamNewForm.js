@@ -1,41 +1,17 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import { auth } from '../firebase';
-import { onAuthStateChanged } from "firebase/auth";
 
 const API = process.env.REACT_APP_API_URL;
 
 function DreamNewForm() {
-  const [userShow, setUserShow]=useState("")
+  // const [userShow, setUserShow]=useState("")
 
 
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          const uid = user.uid;
-          setUserShow(uid);
-          console.log(uid)
-          // setUserShowNAME(`Welcome Back ${user.email}`);
-          // ...
-          // console.log("uid", uid)
 
-        } else {
-          // User is signed out
-          // ...
-          console.log("user is logged out");
-          setUserShow("");
-          // setUserShowNAME(`Sweet Dreams! See You Soon!`);
 
-        }
-      });
-     
-}, [])
-
-let userShow2 = userShow
+// let userShow2 = userShow
 //   let { id } = useParams();
   // console.log(dream)
   //dreams is the previous data populated into the form
@@ -55,7 +31,7 @@ let userShow2 = userShow
 };
 
   const [dream, setdream] = useState({
-    user_id: userShow,
+    // user_id: userShow,
     name: "",
     good_dream: "",
     dream_description: "",    
@@ -94,7 +70,7 @@ let userShow2 = userShow
     <div className="edit">
       <form onSubmit={handleSubmit}>
 
-      <input type="hidden" id="user_id" name="user_id" value={userShow2}></input>
+      {/* <input type="hidden" id="user_id" name="user_id" value={userShow2}></input> */}
       
         <label htmlFor="name">Name:</label>
         <input
