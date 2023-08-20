@@ -9,7 +9,7 @@ function Dreams(){
     
       useEffect(() => {
         axios
-          .get(`${API}/dreams`)
+          .get(`${API}dreams`)
           .then((response) => setdreams(response.data))
           .catch((e) => console.error("catch", e));
       }, [API]);
